@@ -15,7 +15,10 @@ class IndexController
         DB::getConnection() ? $checkDB = Test::test_db(): $checkDB = "Нет соединения с базой данных. Пожалуйста,
         проверьте настройки соединения в /config/db_params.php";
 
-        // подключаем view в который попадают переменные(в данном примере это $checkDB) и в котором
+        //демонстрация post запроса
+        isset($_POST['test']) ? $post_test = $_POST['test']: $post_test = false;
+
+        // подключаем view в который попадают переменные(в данном примере это $checkDB и $post_test) и в котором
         // будем формировать HTML для показа пользователю
         require_once(ROOT . '/views/index.php');
         return true;

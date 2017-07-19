@@ -18,6 +18,14 @@
 <pre>
 <?php print_r($checkDB)?>
 </pre>
-
+<hr>
+<h2>Демонстрация post запроса</h2>
+<form action="/" method="post">
+    <input type="text" name="test">
+    <input type="submit">
+</form>
+<?php if($post_test):?>
+<p>Вы отправили значение <?= $post_test; ?></p>
+<?php endif ?>
 </body>
 </html>
